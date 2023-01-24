@@ -1,0 +1,333 @@
+@import "../../../scss/color";
+@import "../../../scss/font";
+@import "../../../scss/size";
+
+.connectivity-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    .connectivity-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header-overview {
+            display: flex;
+            column-gap: 15px;
+            row-gap: 10px;
+
+            .overview {
+                display: flex;
+                align-items: flex-end;
+                column-gap: 10px;
+                font-weight: 600;
+            }
+        }
+
+        .page-title {
+            display: inline-block;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .page-filter {
+            display: flex;
+            column-gap: 20px;
+            align-items: center;
+        }
+
+        .header-time {
+            font-weight: 600;
+        }
+    }
+
+    .connectivity-content {
+        display: flex;
+        justify-content: space-between;
+        height: calc(100% - 83px);
+        grid-gap: 30px;
+        box-sizing: border-box;
+        // overflow: auto;
+        position: relative;
+    }
+}
+
+.connectivity-ps-pdu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    grid-gap: 10px;
+
+    &__header {
+        font-size: 22px;
+        font-weight: $semiBold;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        grid-gap: 10px;
+        overflow: auto;
+
+        &__header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            grid-gap: 10px;
+            width: 100%;
+
+            &__ps {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 150px;
+                font-size: $fontSizeBodyStandard;
+                font-weight: $semiBold;
+            }
+
+            &__separator {
+                width: auto;
+            }
+
+            &__pdu {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                font-size: $fontSizeBodyStandard;
+                font-weight: $semiBold;
+            }
+        }
+
+        &__body {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            grid-gap: 40px;
+            overflow: auto;
+        }
+
+        &__body-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: auto;
+            grid-gap: 10px;
+            width: 100%;
+
+            &__ps {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                grid-gap: 10px;
+                width: 150px;
+
+                &--up {
+                    margin-top: 40px;
+                }
+
+                &__header {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: $fontSizeBodyStandard;
+                    font-weight: $semiBold;
+                }
+
+                &__content {
+                    display: flex;
+                    flex-direction: column;
+                    // justify-content: center;
+                    align-items: center;
+                    height: 210px;
+                    width: 120px;
+                    box-sizing: border-box;
+                    background-color: $defaultBlack;
+                    border: 5px solid $defaultWhite;
+                    padding: 4px;
+                    overflow-y: auto;
+
+                    span {
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: $fontSizeBodySmaller;
+                        font-weight: $semiBold;
+                        margin: auto;
+                    }
+                }
+            }
+
+            &__arrow {
+                &--up {
+                    margin-top: 85px;
+                }
+
+                &--down {
+                    margin-top: 140px;
+                }
+            }
+
+            &__pdu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                grid-gap: 10px;
+                width: 100px;
+
+                &--up {
+                    margin-top: 15px;
+                }
+
+                &--down {
+                    margin-top: 145px;
+                }
+
+                &__header {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 8px;
+                    font-weight: $semiBold;
+                }
+
+                &__content {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 130px;
+                    width: 30px;
+                    box-sizing: border-box;
+                    background-color: $defaultBlack;
+                    border: 5px solid $defaultWhite;
+                }
+
+                &__item-numbers {
+                    // display: inline-flex;
+                    // flex-direction: column;
+                    // align-items: center;
+                    width: calc(100% - 10px);
+                    height: 130px;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                }
+
+                &__pdu-name {
+                    display: inline-block;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    width: 90px;
+                    font-size: $fontSizeBodySmaller;
+                    font-weight: $semiBold;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    &:hover {
+                        overflow: visible;
+                        white-space: normal;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.connectivity-rack-to-connected-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 225px;
+}
+
+.connectivity-connected-items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    grid-gap: 20px;
+    height: 100%;
+    width: 100%;
+    min-width: 600px;
+    padding: 20px;
+    background-color: $defaultBlueZero;
+    border: 5px solid $defaultWhite;
+    box-sizing: border-box;
+
+    &__items {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        grid-gap: 20px;
+        width: 100%;
+        overflow-y: auto;
+    }
+}
+
+.connectivity-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-gap: 10px;
+    font-size: 12px;
+    font-weight: $semiBold;
+    width: 204px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $defaultBlueFive;
+
+    &__rack {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__u-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        grid-gap: 5px;
+
+        &__u {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 65px;
+        }
+
+        &__item {
+            background-color: $defaultWhite;
+
+            span {
+                display: inline-block;
+                width: 126px;
+                padding-left: 5px;
+                color: $defaultBlack;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+    }
+}

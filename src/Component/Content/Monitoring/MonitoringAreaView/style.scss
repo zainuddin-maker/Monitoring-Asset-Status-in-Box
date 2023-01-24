@@ -1,0 +1,391 @@
+@import "../../../../scss/color";
+@import "../../../../scss/font";
+@import "../../../../scss/size";
+
+.monitoringareaview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .page-title {
+        display: inline-block;
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .header-time {
+        font-weight: 600;
+    }
+}
+
+.monitoringareaview-middle {
+    display: flex;
+    justify-content: space-between;
+
+    .page-filter {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+
+        .button-select-default-status-condition {
+            cursor: pointer;
+            height: 100%;
+            width: 120px;
+            border: 1px solid #5f5f7a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+
+    .monitoring-hide-show-grid {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .hide-facilities {
+            height: 100%;
+            width: 120px;
+            border: 1px solid #5f5f7a;
+            background-color: #4244d4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .select-windows {
+            height: 40px;
+            width: 40px;
+            border: 1px solid #5f5f7a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.header-box {
+    display: flex;
+    padding-left: 30px;
+
+    .header-box-alphabet {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+}
+
+.box-of-data {
+    position: relative;
+    overflow: auto;
+    .list-of-data {
+        display: flex;
+        .number-of-box {
+            width: 30px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .info-legend-icon {
+        position: absolute;
+        bottom: -10;
+        right: -10;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #4244d4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+
+.facilities {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    .facilities-header {
+        padding-left: 40px;
+
+        .facilities-header-data {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+    }
+
+    .facilities-data {
+        display: flex;
+        height: 40px;
+    }
+}
+
+.monitoring-area-blueprint-content {
+    width: 100%;
+    height: 100%;
+    // overflow: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.table-no-border-header {
+    border-spacing: 0px;
+    font-weight: bolder;
+    font-size: 17px;
+    position: relative;
+    th {
+        width: 40px;
+        min-width: 40px;
+        position: sticky;
+        top: 0px;
+        z-index: 10;
+        background-color: $defaultBlueOne;
+    }
+    tbody tr td {
+        position: relative;
+        text-align: center;
+        border: 1px solid $defaultGrey;
+        box-sizing: border-box;
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        min-height: 40px;
+    }
+    td.first-data {
+        border: none;
+        position: sticky;
+        left: 0px;
+        z-index: 10;
+        background-color: $defaultBlueOne;
+    }
+
+    tr:first-child th {
+        border-bottom: 1px solid transparent;
+        box-sizing: border-box;
+    }
+    tr:first-child th:first-child {
+        border-bottom: 1px solid transparent;
+    }
+    td:first-child {
+        border-right: 1px solid transparent;
+    }
+}
+
+.table-facilities {
+    tbody tr td {
+        border: 1px solid #7a7a90;
+        background-color: #7a7a90;
+        z-index: 8;
+    }
+}
+
+.table-monitoring-hide-grid {
+    tbody tr td {
+        border: 1px solid transparent;
+    }
+    tr:first-child th {
+        border-bottom: 1px solid $horizontalInputBorder;
+    }
+    tr:first-child th:first-child {
+        border-bottom: 1px solid transparent;
+    }
+    tr:last-child td {
+        border: none;
+    }
+
+    tr:last-child td {
+        border-bottom: 1px solid $horizontalInputBorder;
+    }
+
+    tr:last-child td:first-child {
+        border-bottom: none;
+    }
+
+    tr:last-child td:first-child {
+        border-right: 1px solid $horizontalInputBorder;
+    }
+    tr:last-child td:last-child {
+        border-right: 1px solid $horizontalInputBorder;
+    }
+
+    td:first-child {
+        border-right: 1px solid $horizontalInputBorder;
+    }
+
+    td:last-child {
+        border: none;
+    }
+    td:last-child {
+        border-right: 1px solid $horizontalInputBorder;
+    }
+}
+
+.monitoring-fasilities-view {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 11;
+}
+
+.monitoring-item-sensor {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .monitoring-item-sensor-fire,
+    .monitoring-item-sensor-cooling,
+    .monitoring-item-sensor-power {
+        height: 30px;
+        width: 30px;
+    }
+
+    .monitoring-item-sensor-rack {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+.tooltip-data-table-monitoring {
+    min-width: 150px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+
+    &--header {
+        span {
+            font-size: 20px;
+        }
+    }
+    &--status {
+        display: flex;
+        justify-content: space-between;
+        span {
+            font-size: 15px;
+        }
+
+        &--Offline {
+            font-weight: bolder;
+            color: $defaultBlack;
+        }
+        &--UP {
+            font-weight: bolder;
+            color: $defaultGreen;
+        }
+        &--DOWN {
+            font-weight: bolder;
+            color: $defaultRed;
+        }
+    }
+    &--condition {
+        span {
+            font-size: 17px;
+        }
+
+        &--Offline {
+            font-weight: bolder;
+            color: $defaultBlack;
+        }
+        &--Good {
+            font-weight: bolder;
+            color: $defaultGreen;
+        }
+
+        &--Critical {
+            font-weight: bolder;
+            color: $defaultRed;
+        }
+
+        &--Warning {
+            font-weight: bolder;
+            color: $defaultYellow;
+        }
+    }
+}
+
+// input[type=radio] {
+//     border: 0px;
+//     width: 30px;
+//     height: 20px;
+// }
+
+input[type="radio"]:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+
+    position: relative;
+    background-color: #000;
+    content: "";
+    display: inline-block;
+
+    border: 2px solid white;
+}
+
+input[type="radio"]:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+
+    position: relative;
+    // background-color: #fff;
+    background: radial-gradient(circle at center, white 50%, black 30%);
+    content: "";
+    display: inline-block;
+    border: 2px solid #fff;
+    // box-shadow: 0 0 0 2px #fff;
+}
+
+input[type="checkbox"] {
+    width: 25px !important;
+    height: 25px !important;
+    margin: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: 2px solid #9f9f9f;
+    box-shadow: none;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #242540;
+}
+
+input[type="checkbox"]:checked:after {
+    content: "\2714";
+    color: #fff;
+    position: relative;
+    top: -3px;
+}
+
+.td-hover-element-select:hover {
+    outline: 5px solid #4244d4;
+    z-index: 100;
+    border: 2px solid #4244d4;
+    cursor: pointer;
+}

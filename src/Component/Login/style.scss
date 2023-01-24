@@ -1,0 +1,139 @@
+@import "../../scss/color";
+
+.Main-login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.7;
+        img {
+            filter: blur(5px);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .Login-page {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+
+        .Logo-image {
+            height: 80px;
+            pointer-events: none;
+            top: 1rem;
+            right: 1rem;
+            position: absolute;
+            img {
+                height: 100%;
+            }
+        }
+
+        .Login-container {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+
+            .Vertical-line {
+                width: 2px;
+                background-color: $defaultWhite;
+            }
+
+            .Logo-content {
+                width: auto;
+                display: grid;
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
+
+                .Logo {
+                    background-color: #333454;
+                    // border: 3px solid $defaultBlueTwo;
+                    border-radius: 15px;
+                    pointer-events: none;
+                    height: 80%;
+                    align-self: start;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+                span {
+                    color: $defaultWhite;
+                    font-size: 40px;
+                    font-weight: 600;
+                    pointer-events: none;
+                    text-align: center;
+                }
+            }
+
+            .Login-content {
+                background-color: $defaultBlueZero;
+                width: 300px;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .Header {
+                    color: $defaultWhite;
+                    font-size: 40px;
+                    font-weight: bold;
+                    text-align: start;
+                    pointer-events: none;
+                }
+
+                .Form {
+                    width: 100%;
+                    display: flex;
+                    flex-flow: column;
+                    text-align: start;
+                    text-transform: uppercase;
+                    gap: 20px;
+
+                    label {
+                        padding-bottom: 5px;
+                    }
+                    button {
+                        width: 100%;
+                        font-size: 16px;
+                    }
+                    .login-username-password {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        .login-required {
+                            display: block;
+                            width: 100%;
+                            text-align: right;
+                            font-size: 14px;
+                            color: $defaultBlueFive;
+                            text-transform: initial;
+                        }
+                    }
+                }
+            }
+        }
+
+        span.copyright {
+            right: 1.5rem;
+            bottom: 1.5rem;
+            pointer-events: none;
+            position: absolute;
+            color: $defaultWhite;
+            font-size: 14px;
+        }
+    }
+}

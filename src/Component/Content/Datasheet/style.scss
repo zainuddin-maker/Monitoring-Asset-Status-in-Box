@@ -1,0 +1,44 @@
+.Datasheet-modal {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 10px;
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    .dropdown {
+        display: flex;
+        align-self: flex-start;
+        margin-left: 7%;
+    }
+    .datasheet {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 780px;
+        gap: 20px;
+        .next-page,
+        .previous-page {
+            cursor: pointer;
+        }
+    }
+    .paging {
+        display: block;
+        width: auto;
+        height: 30px;
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .paging-hidden {
+        visibility: hidden;
+    }
+}

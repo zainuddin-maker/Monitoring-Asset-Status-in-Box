@@ -1,0 +1,151 @@
+@import "../../../scss/color";
+@import "../../../scss/font";
+@import "../../../scss/size";
+.layout_visualization-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    gap: 10px;
+    // position: relative;
+    
+    .monitoring-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .header-overview {
+            display: flex;
+            gap: 15px;
+           
+        }
+
+        .page-title {
+            display: inline-block;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .header-time {
+            font-weight: 600;
+        }
+    }
+
+    .monitoringareaview-middle {
+        display: flex;
+        justify-content: space-between;
+    
+        .page-filter {
+            display: flex;
+            column-gap: 20px;
+            align-items: center;
+        }
+    
+        .monitoring-hide-show-grid {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+    
+            .hide-facilities {
+                height: 100%;
+                width: 120px;
+                border: 1px solid #5f5f7a;
+                background-color: #4244d4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+                font-size: 14px;
+            }
+    
+            .select-windows {
+                height: 40px;
+                width: 40px;
+                border: 1px solid #5f5f7a;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.monitoring-area-blueprint-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.table-details{
+   
+        tbody tr td {
+            border: 1px solid #707070;
+            background-color:#000;
+            height:10px;
+            width: 200px;
+            font-size: 10px;
+        }
+        td.first-data {
+            background-color: transparent;
+            width: 40px;
+        }
+    
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    justify-content: space-between;
+    gap: 10px;
+    
+    .paging {
+        display: flex;
+        min-height: 50px;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}
+
+.black-box-rack{
+
+    background-color:#000 ;
+    width:32px;
+    height:32px ;
+    box-sizing: border-box;
+}
+
+.black-box-rack:hover{
+    width:32px;
+    height:32px ;
+    background-color: #4244D4;
+    box-sizing: border-box;
+  
+}
+
+
+.rack_information{
+
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .rack_information_header{
+        font-size: $fontSizeBodyLarger;
+        font-weight: 500;
+    }
+    .rack_information_racknumber_numberofu{
+
+        display: flex;
+        width: 350px;
+        justify-content: space-between;
+        padding-left: 10px ;
+        .racknumber_numberofu{
+            font-size: $fontSizeBodyLarger;
+        }
+    }
+    .rack_information_location{
+        font-size: $fontSizeBodyLarger;
+    }
+}

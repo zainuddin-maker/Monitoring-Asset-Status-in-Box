@@ -1,0 +1,6 @@
+<svg id="right-arrow-button" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="arrow_x5F_right_x5F_alt1">
+    <path id="Path_905" data-name="Path 905" d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm.031,24V18H8V14h8.031V8.031L24,16Z" fill="#4244d4"/>
+    <path id="Path_906" data-name="Path 906" d="M7.992,13.986h8.023V8.015l8.023,8-8.023,8.041V18H7.992Z" transform="translate(-0.015)" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,226 @@
+@import "../../../../scss/color";
+@import "../../../../scss/font";
+@import "../../../../scss/size";
+
+.Edit-rack-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    position: relative;
+    img.xMark {
+        cursor: pointer;
+    }
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+    .location {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    .client {
+        display: flex;
+        flex-direction: column;
+        p {
+            margin: 0;
+            // font-weight: bold;
+        }
+    }
+    .edit-rack-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-between;
+        .top-side {
+            display: flex;
+            column-gap: 10px;
+            height: fit-content;
+            .left-side {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+                width: 100%;
+                .access {
+                    overflow-y: auto;
+                    max-height: 110px;
+                }
+                p {
+                    margin: 0;
+                    font-weight: bold;
+                }
+                .reusable-input-vertical__input[name="rackNo"] {
+                    opacity: 0.7;
+                }
+            }
+            .right-side {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+                .datasheet {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    .upload-file {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        align-items: center;
+                        button {
+                            width: fit-content;
+                            font-size: 18px;
+                        }
+                        span {
+                            flex-wrap: wrap;
+                            row-gap: 5px;
+                        }
+                    }
+                    .upload-datasheet {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        max-height: 75px;
+                        overflow-y: auto;
+                        position: relative;
+                        min-height: 30px;
+                        div.file {
+                            overflow-wrap: anywhere;
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                            span.file {
+                                text-decoration: underline;
+                                color: blue;
+                                font-size: 12px;
+                                cursor: pointer;
+                                width: fit-content;
+                            }
+                            img.xMark {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+                .power {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    max-height: 100px;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                }
+                .powerSource {
+                    display: flex;
+                    gap: 10px;
+                    background-color: #51414c;
+                    padding: 6px 10px 6px 10px;
+                    width: fit-content;
+                    align-items: center;
+                    span {
+                        width: auto;
+                        min-width: 100px;
+                        font-size: 20px;
+                    }
+                    select {
+                        font-family: $fontFamily;
+                        font-size: $fontSizeValueInput;
+                        font-weight: $semiBold;
+                        color: $defaultWhite;
+                        width: 100px;
+                        height: 30px;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        background-color: $defaultBlueTwo;
+                        border: 1px solid $verticalInputBorder;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .bottom-side {
+            display: flex;
+            column-gap: 10px;
+            height: fit-content;
+            justify-content: space-between;
+            .left-side {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+                width: 100%;
+                .access {
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: auto;
+                    max-height: 90px;
+                    gap: 10px;
+                    .access-input {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        background-color: #51414c;
+                        padding: 6px 10px 6px 10px;
+                        width: fit-content;
+                        span {
+                            width: auto;
+                            min-width: 100px;
+                        }
+                        input {
+                            font-family: $fontFamily;
+                            font-size: $fontSizeValueInput;
+                            font-weight: $semiBold;
+                            color: $defaultWhite;
+                            width: 100px;
+                            height: 30px;
+                            padding: 5px;
+                            box-sizing: border-box;
+                            background-color: $defaultBlueTwo;
+                            border: 1px solid $verticalInputBorder;
+                        }
+                    }
+                }
+                .add-access {
+                    color: blue;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+            .right-side {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+                min-width: 363px;
+                width: 100%;
+                .power {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    max-height: 90px;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    .powerSource {
+                        display: flex;
+                        gap: 10px;
+                        background-color: #51414c;
+                        padding: 5px;
+                        // padding: 6px 10px 6px 10px;
+                        align-items: center;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,789 @@
+@import "../../../scss/color";
+@import "../../../scss/font";
+@import "../../../scss/size";
+
+.lodaing-location {
+    position: relative;
+}
+
+.incident-header-child-container {
+    display: flex;
+    gap: 15px;
+
+    .incident-header-children {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        > div,
+        a {
+            padding: 4px;
+        }
+        .clicked {
+            background-color: $borderColor;
+            outline: 1px solid white;
+            outline-offset: -1px;
+        }
+    }
+
+    .page-title {
+        display: inline-block;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .page-filter {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+    }
+}
+
+.incident-form-container {
+    margin: auto;
+    background-color: $defaultBlueZero;
+    position: relative;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        // height: 20px;
+        background-color: $defaultBlueFive;
+        padding: 5px;
+        > div {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+
+        .submitter {
+            font-family: $fontFamily;
+            box-sizing: border-box;
+
+            &__label {
+                display: inline-block;
+                font-size: $fontSizeLabelInput;
+                color: $defaultWhite;
+                width: 100%;
+                box-sizing: border-box;
+                word-break: break-all;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &__value {
+                font-family: $fontFamily;
+                font-size: $fontSizeValueInput;
+                font-weight: $semiBold;
+                color: $defaultWhite;
+                width: 100%;
+                height: 25px;
+                box-sizing: border-box;
+            }
+        }
+
+        .upper-input {
+            display: flex;
+            column-gap: 70px;
+        }
+        .middle-input {
+            display: flex;
+            width: 100%;
+            column-gap: 25px;
+        }
+        .lower-input {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 25px;
+
+            .incident-form-image-container {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            column-gap: 20px;
+        }
+    }
+}
+.confirmation-button-container {
+    display: flex;
+    column-gap: 10px;
+    justify-content: flex-end;
+    padding: 0 10px 10px 0;
+    height: 40px;
+
+    .confirmation-button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $defaultGreen;
+        cursor: pointer;
+    }
+    .reject-button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $defaultRed;
+        cursor: pointer;
+        > div {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .disabled {
+        cursor: not-allowed;
+    }
+}
+
+.incident-record-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    row-gap: 10px;
+}
+.record-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 20px;
+}
+
+.record-body-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    column-gap: 10px;
+    overflow: auto;
+
+    .table-filter-container {
+        padding: 10px;
+        border: 2px solid $borderColor;
+        width: 100%;
+        overflow: auto;
+        min-width: 600px;
+
+        .incident-padding-table {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: space-between;
+            height: 100%;
+            gap: 10px;
+
+            .table-container {
+                position: relative;
+                height: 100%;
+                overflow: auto;
+                .reusable-table-dcim-container {
+                    .reusable-table-dcim {
+                        thead {
+                            > tr {
+                                > th {
+                                    font-size: $fontSizeBodyStandard;
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    font-size: $fontSizeBodyStandard;
+                                }
+                                // &:nth-child(odd) {
+                                //     background-color: $borderColor;
+                                // }
+
+                                // &:nth-child(even) {
+                                //     background-color: $defaultBlueZero;
+                                // }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .table-paging-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            .table-container {
+                height: 100%;
+                overflow: auto;
+            }
+        }
+    }
+    .chart-card-container-content {
+        padding: 10px;
+        background-color: $defaultBlueZero;
+        min-width: 600px;
+    }
+    .chart-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        gap: 10px;
+        overflow: auto;
+
+        .chart-filter-container {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+
+            .left-tab-menu,
+            .right-tab-menu {
+                display: flex;
+                justify-content: flex-start;
+                column-gap: 10px;
+                align-items: center;
+            }
+
+            .left-tab-menu {
+                > div {
+                    padding: 3px;
+                    cursor: pointer;
+                }
+                .selected {
+                    background-color: $borderColor;
+                }
+            }
+
+            .right-tab-menu {
+                padding: 3px;
+                background-color: $borderColor;
+                > div {
+                    padding: 2px 5px 2px 5px;
+                    cursor: pointer;
+                }
+                .selected {
+                    background-color: $defaultBlueFive;
+                }
+            }
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            height: 100%;
+            overflow: auto;
+            position: relative;
+            .chart-title {
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+        .top-chart-container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            .chart-legend {
+                display: flex;
+            }
+
+            .chart-open-incident {
+                display: flex;
+                justify-content: flex-start;
+                column-gap: 50px;
+                align-items: center;
+                .category-legend-container {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
+                    .category-label {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        > div {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+                }
+
+                .open-card-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 10px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    > div {
+                        text-align: center;
+                    }
+                    .open-value-container {
+                        background-color: $borderColor;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 28px;
+                        font-weight: 700;
+                        height: 50px;
+                        width: 55px;
+                    }
+                }
+            }
+            .left-tab-menu {
+                > div {
+                    padding: 5px;
+                }
+                .selected {
+                    background-color: $borderColor;
+                }
+            }
+
+            .right-tab-menu {
+                padding: 3px;
+                background-color: $defaultBackgroudBrown;
+                > div {
+                    padding: 2px 5px 2px 5px;
+                }
+                .selected {
+                    background-color: $defaultBlueFive;
+                }
+            }
+        }
+        .mid-chart-container {
+            mid-chart-container {
+                display: flex;
+                align-items: center;
+            }
+        }
+        .bottom-chart-container {
+            display: flex;
+            column-gap: 45px;
+            .chart-title {
+                text-align: center;
+            }
+
+            .bottom-left-chart {
+                display: flex;
+                justify-content: space-between;
+
+                .chart-open-incident {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .donut-legend-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                    min-width: 70px;
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        column-gap: 10px;
+
+                        > span {
+                            font-size: 16px;
+                        }
+
+                        > div {
+                            display: flex;
+                            flex-direction: column;
+                            font-size: 24px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tab-menu-export {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-menu-container {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    align-items: center;
+    font-size: 18px;
+    > div {
+        cursor: pointer;
+        padding: 5px;
+    }
+    .selected {
+        background-color: $borderColor;
+    }
+}
+
+.incident-detail-container {
+    width: 745px;
+    height: 430px;
+    // padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    .incident-tabmenu {
+        border-bottom: 3px solid $borderColor;
+        display: flex;
+        column-gap: 5%;
+        padding-bottom: 5px;
+        font-weight: 600;
+        span {
+            cursor: pointer;
+            padding: 5px;
+        }
+        .selected {
+            span {
+                color: $defaultBlueFive;
+                border-bottom: 3px solid $defaultBlueFive;
+            }
+        }
+    }
+    .incident-body-container {
+        display: flex;
+        column-gap: 40px;
+
+        .left-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            row-gap: 15px;
+
+            .image-container {
+                min-width: 200px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: $defaultWhite;
+                position: relative;
+                > img {
+                    object-fit: cover;
+                    width: 200px;
+                }
+            }
+            .status-container {
+                display: flex;
+                justify-content: flex-start;
+                column-gap: 10px;
+                align-items: center;
+                > div:last-child {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+            .image-container-preview {
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                img {
+                    width: 40px;
+                    object-fit: cover;
+                }
+            }
+            .image-container-preview:hover {
+                opacity: 0.8;
+                background-color: black;
+            }
+        }
+
+        .right-container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            max-width: 450px;
+
+            .parameter-container {
+                display: flex;
+                column-gap: 20px;
+                > div:first-child {
+                    width: 140px;
+                }
+                > div:last-child {
+                    max-width: 225px;
+                    font-weight: 600;
+                }
+                .high {
+                    width: 65px;
+                    height: 25px;
+                    text-align: center;
+                    align-items: center;
+                    padding: 2px 15px;
+                    border: 2px solid $defaultRed;
+                    border-radius: 5px;
+                    background-color: rgba($defaultRed, 0.3);
+                    color: $defaultRed;
+                }
+                .low {
+                    width: 65px;
+                    height: 25px;
+                    text-align: center;
+                    align-items: center;
+                    padding: 2px 15px;
+                    border: 2px solid $defaultGreen;
+                    border-radius: 5px;
+                    background-color: rgba($defaultGreen, 0.3);
+                    color: $defaultGreen;
+                }
+                .medium {
+                    width: 65px;
+                    height: 25px;
+                    text-align: center;
+                    align-items: center;
+                    padding: 2px 15px;
+                    border: 2px solid $defaultYellow;
+                    border-radius: 5px;
+                    background-color: rgba($defaultYellow, 0.3);
+                    color: $defaultYellow;
+                }
+            }
+        }
+    }
+}
+.closed-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    height: 100%;
+
+    .parameter-container {
+        display: flex;
+        column-gap: 20px;
+        > div:first-child {
+            width: 185px;
+        }
+        > div:last-child {
+            max-width: 260px;
+            font-weight: 600;
+        }
+    }
+}
+.open {
+    color: $defaultRed;
+}
+.closed {
+    color: $defaultLightGreen;
+}
+.waiting {
+    color: $defaultYellow;
+}
+
+.confirmation-card-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    position: relative;
+
+    .confirmation-card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+}
+
+.confirm-card-container {
+    background-color: $defaultBlueZero;
+    width: 400px;
+
+    .confirm-card-header {
+        padding: 10px;
+        background-color: $darkBrown;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 600;
+
+        .svg-container {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            > div {
+                width: 15px;
+                height: 15px;
+            }
+            > div:last-child {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+            }
+            .up,
+            .running,
+            .good,
+            .low {
+                background-color: $defaultGreen;
+            }
+            .warning,
+            .medium {
+                background-color: $defaultYellow;
+            }
+            .critical,
+            .down,
+            .high {
+                background-color: $defaultRed;
+            }
+        }
+    }
+    .confirm-body-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 85%;
+    }
+    .confirm-card-body {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        height: 100%;
+
+        .confirm-parameter-container {
+            display: flex;
+            justify-content: space-between;
+
+            > div {
+                > span {
+                    font-size: 16px;
+                }
+                > div {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+            .right-param {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .left-param {
+                // max-width: 250px;
+                display: flex;
+                flex-direction: column;
+                > div {
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                .remark-close {
+                    width: 380px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+            .left-param:hover {
+                .remark-close {
+                    overflow: visible;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}
+
+.confirm-card-container:hover {
+    outline: 5px solid $defaultBlueFive;
+    outline-offset: -5px;
+}
+.column-closed {
+    color: $defaultGreen !important;
+}
+
+.column-open {
+    color: $defaultRed !important;
+}
+.column-waiting {
+    color: $defaultYellow !important;
+}
+
+.close-incident-body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    .close-incident-data {
+        display: flex;
+        column-gap: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+.chart-tooltip {
+    background-color: $defaultWhite;
+    color: $defaultBlack;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#table-height {
+    .reusable-table-dcim {
+        cursor: context-menu;
+    }
+    .reusable-table-dcim__row--selected {
+        outline: none;
+    }
+}
+
+.incident-export-button {
+    .incident-export-icon {
+        height: 30px;
+        cursor: pointer;
+    }
+}
+
+#asset {
+    background-color: #4244d4;
+}
+#security {
+    background-color: #597bd9;
+}
+#fire {
+    background-color: #f11b2a;
+}
+#power {
+    background-color: #febc2c;
+}
+#environment {
+    background-color: #00a629;
+}
+#network {
+    background-color: #5f5f7a;
+}
+
+a:-webkit-any-link {
+    color: white;
+}

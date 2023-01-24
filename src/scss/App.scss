@@ -1,0 +1,695 @@
+@import "color";
+@import "font";
+@import "size";
+
+body {
+    height: 100vh;
+    margin: 0px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    #root {
+        height: 100%;
+        .app {
+            background-color: $defaultBlueOne;
+            height: 100%;
+        }
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $defaultGrey;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $defaultBlueTwo;
+}
+
+.app-split-sidebar-others {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .app-sidebar {
+        width: auto;
+        min-width: 70px;
+        background-color: $defaultBlueTwo;
+    }
+}
+
+.app-split-header-content:hover {
+    overflow: auto;
+}
+.app-split-header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+    overflow: hidden;
+    .app-header {
+        height: auto;
+        min-height: 60px;
+    }
+    .app-content {
+        height: 100%;
+        color: white;
+        overflow: hidden;
+    }
+    .app-content:hover {
+        overflow: auto;
+    }
+}
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    .header-menu-content {
+        width: 100%;
+        position: relative;
+        overflow: auto;
+        .header-menu-list:hover {
+            overflow: auto;
+        }
+        .header-menu-list {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            height: 100%;
+            gap: 60px;
+            overflow: hidden;
+        }
+        .header-menu-line {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: $defaultBlueTwo;
+            bottom: 0px;
+        }
+        .header-menu {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            cursor: pointer;
+            .header-menu-image {
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            .header-menu-text {
+                span {
+                    font-size: 25px;
+                    color: white;
+                    font-weight: 600;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .header-selected-menu {
+            border-bottom: solid 3px $defaultBlueSix;
+            z-index: 20;
+            .header-menu-image {
+                svg {
+                    path {
+                        stroke: $defaultBlueSix;
+                    }
+                }
+            }
+            .header-menu-text {
+                span {
+                    color: $defaultBlueSix;
+                }
+            }
+        }
+    }
+    .header-mediaaccess {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        img {
+            height: 60px;
+        }
+    }
+}
+
+.sidebar-content {
+    height: 100%;
+    width: 100%;
+    font-size: $sidebarTooltip;
+    color: $defaultWhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sidebar-logo-dcim {
+        min-height: 80px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        margin: auto;
+        img {
+            width: 70px;
+        }
+    }
+
+    .sidebar-profile-notification {
+        height: auto;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: auto;
+        gap: 5px;
+        .sidebar-notification {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            height: 50px;
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+
+            .sidebar-sum-notification {
+                height: 30px;
+                width: 30px;
+                border-radius: 15px;
+                background: red;
+                position: absolute;
+                top: -5px;
+                left: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                span {
+                    font-size: 18px;
+                    padding: 2px;
+                    font-weight: 600;
+                }
+            }
+        }
+        .sidebar-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            height: 50px;
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+        }
+        .sidebar-profile-notification-line {
+            height: 2px;
+            background-color: white;
+        }
+    }
+
+    .sidebar-menu:hover {
+        overflow-y: auto;
+    }
+    .sidebar-menu {
+        color: $defaultWhite;
+        overflow-y: hidden;
+        width: 100%;
+        height: 100%;
+
+        .sidebar-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            .side-tooltip-unchoosen:hover {
+                .sidebar-tooltip-child {
+                    max-height: 1000px;
+                    transition: all 0.3s ease-in;
+
+                    .side-tooltip-unchoosen-child:hover {
+                        svg {
+                            path {
+                                stroke: $defaultWhite;
+                            }
+                        }
+                        .side-tooltip-text {
+                            color: $defaultWhite;
+                        }
+                    }
+                }
+                .sidebar-tooltip {
+                    background-color: $defaultGrey;
+                    .sidebar-tooltip-image {
+                        svg {
+                            path {
+                                stroke: $defaultBlueFive;
+                            }
+                        }
+                    }
+                    .sidebar-tooltip-text {
+                        .side-tooltip-text {
+                            color: $defaultWhite;
+                        }
+                    }
+                }
+            }
+            .side-tooltip-unchoosen,
+            .side-tooltip-choosen {
+                color: transparent;
+                display: flex;
+                flex-direction: column;
+
+                .sidebar-tooltip {
+                    display: flex;
+                    background-color: $defaultGrey;
+                    border-left: solid 10px $defaultBlueFive;
+
+                    .sidebar-tooltip-image {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 50px;
+                        svg {
+                            path {
+                                stroke: $defaultWhite;
+                            }
+                        }
+                    }
+                    .sidebar-tooltip-text {
+                        position: fixed;
+                        .sidebar-tooltip-text-content {
+                            display: flex;
+                            height: 100%;
+                            flex-direction: column;
+                            justify-content: center;
+                            .side-tooltip-text {
+                                font-size: $sidebarTooltip;
+                            }
+                        }
+                    }
+                }
+
+                .sidebar-tooltip-child {
+                    color: transparent;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $defaultGrey;
+                    margin-left: 10px;
+                    max-height: 0px;
+                    overflow-y: hidden;
+                    transition: all 0.3s ease-in-out;
+
+                    .side-tooltip-unchoosen-child:hover {
+                        background-color: $defaultBlueFive;
+                    }
+                    .side-tooltip-unchoosen-child,
+                    .side-tooltip-choosen-child {
+                        display: flex;
+                        flex-direction: column;
+                        .sidebar-tooltip-image-child {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 50px;
+                            svg {
+                                path {
+                                    stroke: $defaultWhite;
+                                }
+                            }
+                        }
+                        .sidebar-tooltip-text-child {
+                            position: fixed;
+                            .sidebar-tooltip-text-content {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                height: 100%;
+                                .side-tooltip-text {
+                                    font-size: $sidebarTooltip;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .side-tooltip-choosen {
+                .sidebar-tooltip-child {
+                    max-height: 1000px;
+                    transition: all 0.3s ease-in-out;
+
+                    .side-tooltip-unchoosen-child:hover {
+                        svg {
+                            path {
+                                stroke: $defaultWhite;
+                            }
+                        }
+                        .side-tooltip-text {
+                            color: $defaultWhite;
+                        }
+                    }
+
+                    .side-tooltip-choosen-child {
+                        background-color: $defaultBlueFive;
+                        .sidebar-tooltip-image-child {
+                            svg {
+                                path {
+                                    stroke: $defaultWhite;
+                                }
+                            }
+                        }
+                        .sidebar-tooltip-text-child {
+                            .side-tooltip-text {
+                                color: $defaultWhite;
+                            }
+                        }
+                    }
+                }
+                .sidebar-tooltip {
+                    background-color: $defaultGrey;
+                    border-left: solid 10px $defaultBlueFive;
+                    .sidebar-tooltip-image {
+                        svg {
+                            path {
+                                stroke: $defaultBlueFive;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .side-tooltip-unchoosen {
+                .sidebar-tooltip {
+                    background-color: transparent;
+                    border-left: none;
+
+                    .sidebar-tooltip-image {
+                        svg {
+                            path {
+                                stroke: $defaultWhite;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #show.side-tooltip-text {
+        opacity: 100%;
+    }
+
+    #show.side-tooltip-choosen {
+        .side-tooltip-text {
+            color: $defaultWhite;
+            font-weight: 600;
+        }
+    }
+
+    .side-tooltip-choosen {
+        .sidebar-tooltip,
+        .sidebar-tooltip-child {
+            .sidebar-tooltip-text,
+            .sidebar-tooltip-text-child {
+                z-index: 20;
+                display: none;
+                left: 90px;
+                height: 50px;
+            }
+            .sidebar-tooltip-text-content {
+                background-color: $defaultBlueFive;
+                height: 100%;
+            }
+            .side-tooltip-text {
+                white-space: nowrap;
+                color: $defaultWhite;
+                font-weight: 600;
+                padding: 0px 10px;
+            }
+            .side-tooltip-text::after {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: -30px;
+                border-width: 15px;
+                border-style: solid;
+                border-color: transparent $defaultBlueFive transparent
+                    transparent;
+            }
+        }
+    }
+    .side-tooltip-unchoosen {
+        .sidebar-tooltip,
+        .sidebar-tooltip-child {
+            .sidebar-tooltip-text,
+            .sidebar-tooltip-text-child {
+                z-index: 20;
+                display: none;
+                left: 90px;
+                height: 50px;
+            }
+            .sidebar-tooltip-text-content {
+                background-color: $defaultBlueFive;
+                height: 100%;
+            }
+            .side-tooltip-text {
+                white-space: nowrap;
+                color: $defaultWhite;
+                font-weight: 600;
+                padding: 0px 10px;
+            }
+            .side-tooltip-text::after {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: -30px;
+                border-width: 15px;
+                border-style: solid;
+                border-color: transparent $defaultBlueFive transparent
+                    transparent;
+            }
+        }
+    }
+
+    .side-tooltip-unchoosen:hover,
+    .side-tooltip-choosen:hover {
+        .sidebar-tooltip:hover {
+            .sidebar-tooltip-text {
+                display: initial;
+            }
+        }
+        .side-tooltip-unchoosen-child:hover {
+            .sidebar-tooltip-text-child {
+                display: initial;
+            }
+        }
+        .side-tooltip-choosen-child:hover {
+            .sidebar-tooltip-text-child {
+                display: initial;
+            }
+        }
+    }
+}
+
+.content-content {
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-tooltip-bottom {
+    position: relative;
+    z-index: 20;
+    .sidebar-tooltip-location {
+        display: none;
+        position: absolute;
+        left: 80px;
+        height: 100%;
+        .sidebar-tooltip-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $defaultBlueFive;
+            height: 100%;
+            padding: 0px 10px;
+        }
+        .sidebar-tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: auto;
+            left: -30px;
+            border-width: 15px;
+            border-style: solid;
+            border-color: transparent $defaultBlueFive transparent transparent;
+        }
+    }
+}
+.sidebar-tooltip-bottom:hover {
+    .sidebar-tooltip-location {
+        display: initial;
+    }
+}
+
+.sidebar-notification-location {
+    position: absolute;
+    left: 70px;
+    bottom: 0px;
+    cursor: initial;
+    z-index: 20;
+    .sidebar-notification-content {
+        overflow-y: auto;
+        width: 330px;
+        height: 400px;
+        background-color: $defaultGrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        .sidebar-notification-list-content {
+            padding: 10px 5px;
+            padding-bottom: 0px;
+            height: 100%;
+            overflow: auto;
+            .sidebar-notification-list::-webkit-scrollbar-thumb {
+                background: $defaultBlueFive;
+            }
+
+            .sidebar-notification-list::-webkit-scrollbar-thumb:hover {
+                background: $defaultBlueTwo;
+            }
+            .sidebar-notification-list {
+                height: 100%;
+                overflow: auto;
+                .sidebar-notification-padding-scroll {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    padding: 0px 5px;
+                }
+                .sidebar-notification-line {
+                    height: 1px;
+                    background-color: white;
+                }
+                .sidebar-notification-item--readed:hover,
+                .sidebar-notification-item:hover {
+                    opacity: 0.7;
+                }
+                .sidebar-notification-item--readed,
+                .sidebar-notification-item {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $defaultBlueFive;
+                    border: solid 2px $defaultBlueFive;
+                    padding: 5px;
+                    gap: 5px;
+                    cursor: pointer;
+                    &-time {
+                        font-size: 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+                    &-message {
+                        font-size: 17px;
+                        span {
+                            display: block;
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+                }
+                .sidebar-notification-item--readed {
+                    background-color: transparent;
+                    border: solid 3px white;
+                }
+            }
+        }
+        .sidebar-notification-to:hover {
+            opacity: 0.7;
+        }
+        .sidebar-notification-to {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            min-height: 40px;
+            width: 100%;
+            justify-content: center;
+            background-color: $defaultBlueFive;
+            color: white;
+        }
+    }
+}
+
+.sidebar-tooltip-profile-logout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 10px;
+    .sidebar-tooltip-line {
+        height: 2px;
+        background-color: white;
+    }
+    .sidebar-tooltip-profile {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+        span {
+            white-space: nowrap;
+        }
+        img {
+            width: 20px;
+        }
+    }
+    .sidebar-tooltip-profile:hover {
+        opacity: 0.7;
+    }
+}
+
+.sidebar-logo-user {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-loading-notification {
+    position: absolute;
+    > img {
+        width: 50px;
+    }
+}
+.apexcharts-tooltip {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
